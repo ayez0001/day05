@@ -1,0 +1,66 @@
+<mat-toolbar color="primary" fxLayout="row column" fxLayoutAlign="space-between center">  
+  <div fxlayout="row" fxLayoutAlign="start center" fxLayoutGap="1vw"> 
+      <img src="assets/music.jpg" class="logo">
+      <span>{{title}}</span>
+      </div>
+</mat-toolbar> 
+
+<div class="side-by-side">
+    <form #form="ngForm" (ngSubmit)="display()" fxLayout="column" fxLayoutGap="3vh"  style="border:solid; color:grey; border-radius: 10%;">
+  
+    <mat-form-field>  
+        <label>Album name: * </label>      
+      <input matInput type="text" id="name" name="name"
+        ngModel required matInput #nameField="ngModel">
+    </mat-form-field>
+
+    <mat-form-field>  
+        <label>Artist name: * </label>      
+        <input matInput required type="text" id="name" name="name"
+          ngModel #nameField="ngModel">
+      </mat-form-field>
+  
+      <mat-label>Album rate: </mat-label>
+      <mat-slider #rate min="0" max="10" step="1" tickInterval="1"
+          value="5" thumbLabel>
+      </mat-slider>
+
+      <mat-label>Album image: </mat-label>
+      <input type="file" name="ImageFile" ngModel >
+
+
+ <div style= "height:5vh">
+</div>  
+  
+    <div fxLayout="row column"  fxLayoutAlign="center" fxLayoutGap="10vw">
+      <button mat-raised-button type="reset" [disabled]="form.invalid" color="primary">
+        <mat-icon>clear</mat-icon>
+        Clear
+      </button>
+
+      <button  mat-raised-button type="submit" [disabled]="form.invalid" color="primary"   (click)="display($event)">
+          <mat-icon>add</mat-icon>
+          Add
+      </button>
+
+    </div>
+
+  </form>
+<app-list style="border:solid; color:grey; border-radius: 10%; width: 40vw">
+  <h3 > title="Vinyl list"</h3>
+      <ul ng-repeat="topicname in AllTopic">
+      
+        <li></li>
+      </ul>
+  <script>
+    var sampleApp = angular.module("sampleApp",[]);
+ 
+     sampleApp.controller("AngularController",function($scope) {
+         $scope.AllTopic=[];
+         $scope.Display = function () {
+             $scope.AllTopic.push($scope.Topic);
+         }
+     });
+ </script>
+</app-list>
+</div>

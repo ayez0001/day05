@@ -1,0 +1,15 @@
+.logo {
+    width: auto;
+    height: 8vh;
+    border-radius: 100px;
+  }
+  
+  form {
+    padding: 3vw;
+  }
+  .side-by-side {
+    display: flex;
+    flex-direction: row;
+    justify-content: 50vw;
+  }
+  

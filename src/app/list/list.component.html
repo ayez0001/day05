@@ -1,0 +1,15 @@
+<h3 center="center"> </h3>
+
+<div *ngIf="list.length == 0" style="border:solid; color:grey; border-radius: 10%;">
+  <h2>Your vinyl list is empty</h2>
+</div>
+
+<div *ngFor="let i of list">
+  <div><strong>{{ i.sku.albumName }}</strong></div>
+  <div><strong>{{ i.sku.artistName }}</strong></div>
+  <div><strong>{{ i.sku.rate }}</strong></div>
+  <div><strong>{{ i.sku.image }}</strong></div>
+
+  <div>{{ i.quantity }}</div>
+</div>
+
